@@ -1,4 +1,4 @@
-# Copyright (C) 2014 SUSE Linux GmbH
+# Copyright (C) 2014-2019 SUSE LLC
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ sub run {
         assert_screen "prompt", 30;
         send_key "ret";
     }
-    wait_serial "Welcome to OBS Appliance, based on openSUSE", 900;
+    wait_serial 'Welcome to O(pen Build Service|BS).*Appliance', 900;
     send_key_until_needlematch("login", "ret", 20, 40);
     sleep(2);
     type_string "root";
